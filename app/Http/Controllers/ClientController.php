@@ -23,7 +23,7 @@ class ClientController extends Controller
     {
         $limit = 2;
         $page = $request->query('page', 1);
-        $offset = ( $page - 1 ) * $limit;
+        $offset = ($page - 1) * $limit;
         $clients = Reader::createFromPath(storage_path('app/client.csv'));
         $total = $clients->each(function () {
             return true;
