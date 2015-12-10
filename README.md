@@ -1,5 +1,5 @@
 # Client Manager
-
+[![Build Status](https://travis-ci.org/Amrit01/client-manager.svg?branch=master)](https://travis-ci.org/Amrit01/client-manager)
 [![StyleCI](https://styleci.io/repos/47721899/shield)](https://styleci.io/repos/47721899)
 
 ## Installation
