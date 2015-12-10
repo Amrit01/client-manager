@@ -10,7 +10,6 @@ use League\Csv\Writer;
 
 class CsvStore implements Store
 {
-
     /**
      * Get paginated client list.
      *
