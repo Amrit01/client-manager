@@ -27,8 +27,8 @@ class StoreClientRequest extends Request
             'email'                  => 'required|email',
             'phone'                  => 'required',
             'address'                => 'required',
-            'nationality'            => 'required',
-            'date_of_birth'          => 'required',
+            'nationality'            => 'required|in:'.implode(',', config('nationalities')),
+            'date_of_birth'          => 'required|date',
             'qualification'          => 'required',
             'preferred_contact_mode' => 'required|in:email,phone,none',
         ];
