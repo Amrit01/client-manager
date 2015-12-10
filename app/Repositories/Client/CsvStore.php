@@ -12,7 +12,7 @@ class CsvStore implements Store
 {
 
     /**
-     * Get paginated client list
+     * Get paginated client list.
      *
      * @param $perPage
      *
@@ -32,6 +32,13 @@ class CsvStore implements Store
         return (new LengthAwarePaginator($clients->setOffset($offset)->setLimit($perPage)->fetchAll(), $total, $perPage))->setPath('client');
     }
 
+    /**
+     * Store Requested data.
+     *
+     * @param $request
+     *
+     * @return static
+     */
     public function store($request)
     {
         $file = storage_path('app/client.csv');

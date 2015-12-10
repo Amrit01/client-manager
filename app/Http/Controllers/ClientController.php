@@ -59,6 +59,7 @@ class ClientController extends Controller
         } catch (\Exception $e) {
             //@TODO flash error message
         }
+
         return redirect()->action('ClientController@index');
     }
 }
