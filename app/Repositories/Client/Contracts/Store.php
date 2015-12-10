@@ -22,5 +22,4 @@ interface Store
      * @return mixed
      */
     public function store($request);
-
 }

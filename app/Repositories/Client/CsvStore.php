@@ -23,7 +23,7 @@ class CsvStore implements Store
     public function paginated($perPage, $request)
     {
         $page = $request->query('page', 1);
-        $offset = ( $page - 1 ) * $perPage;
+        $offset = ($page - 1) * $perPage;
         $clients = Reader::createFromPath(storage_path('app/client.csv'));
         $total = $clients->each(function () {
             return true;
