@@ -1,6 +1,7 @@
 @extends('layout.master')
 
 @section('content')
+<div class="row">
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="pull-right">
@@ -44,4 +45,5 @@
             {!! $clients->render() !!}
         </div>
     </div>
+</div>
 @endsection
