@@ -22,10 +22,10 @@ class CsvStore implements Store
      */
     public function paginated($perPage, $request)
     {
-        $page    = $request->query('page', 1);
-        $offset  = ( $page - 1 ) * $perPage;
+        $page = $request->query('page', 1);
+        $offset = ( $page - 1 ) * $perPage;
         $clients = Reader::createFromPath(storage_path('app/client.csv'));
-        $total   = $clients->each(function () {
+        $total = $clients->each(function () {
             return true;
         });
 
@@ -35,7 +35,7 @@ class CsvStore implements Store
     public function store($request)
     {
         $file = storage_path('app/client.csv');
-        if ( ! File::exists($file)) {
+        if (! File::exists($file)) {
             File::put($file, '');
         }
         $writer = Writer::createFromPath(new SplFileObject($file), 'a');

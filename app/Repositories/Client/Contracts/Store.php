@@ -4,7 +4,6 @@ namespace App\Repositories\Client\Contracts;
 
 interface Store
 {
-
     /**
      * Get paginated client list
      *

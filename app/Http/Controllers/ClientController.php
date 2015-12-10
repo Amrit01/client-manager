@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreClientRequest;
 use App\Repositories\Client\Contracts\Store;
-use File;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -19,7 +18,6 @@ class ClientController extends Controller
      */
     public function __construct(Store $clientRepository)
     {
-
         $this->clientRepository = $clientRepository;
     }
 
@@ -58,11 +56,9 @@ class ClientController extends Controller
     {
         try {
             $this->clientRepository->store($request);
-
-            return redirect()->action('ClientController@index');
         } catch (\Exception $e) {
-
+            //@TODO flash error message
         }
-
+        return redirect()->action('ClientController@index');
     }
 }
