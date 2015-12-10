@@ -40,7 +40,6 @@ class ClientController extends Controller
      */
     public function create()
     {
-
         return view('client.create');
     }
 
@@ -53,7 +52,6 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-
         $file = storage_path('app/client.csv');
         if (! File::exists($file)) {
             File::put($file, '');
