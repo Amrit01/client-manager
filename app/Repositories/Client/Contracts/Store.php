@@ -9,17 +9,18 @@
 namespace App\Repositories\Client\Contracts;
 
 
-interface Store {
+interface Store
+{
 
-	/**
-	 * Get paginated client list
-	 *
-	 * @param $perPage
-	 *
-	 * @return mixed
-	 */
-	public function paginated($perPage);
+    /**
+     * Get paginated client list
+     *
+     * @param $perPage
+     *
+     * @return mixed
+     */
+    public function paginated($perPage);
 
-	public function store($data);
+    public function store($data);
 
 }

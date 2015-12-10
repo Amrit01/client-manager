@@ -1,7 +1,6 @@
 /bootstrap/compiled.php
 .env
 .idea
-bootstrap/cache
 composer.lock
 vendor
 node_modules
