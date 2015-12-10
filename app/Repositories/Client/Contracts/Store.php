@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: amrit
- * Date: 12/10/15
- * Time: 12:49 AM
- */
 
 namespace App\Repositories\Client\Contracts;
-
 
 interface Store
 {
@@ -16,11 +9,19 @@ interface Store
      * Get paginated client list
      *
      * @param $perPage
+     * @param $request
      *
      * @return mixed
      */
-    public function paginated($perPage);
+    public function paginated($perPage, $request);
 
-    public function store($data);
+    /**
+     * Store Requested data
+     *
+     * @param $request
+     *
+     * @return mixed
+     */
+    public function store($request);
 
 }
