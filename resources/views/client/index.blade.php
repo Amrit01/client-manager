@@ -1,12 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Client List</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+@extends('layout.master')
+
+@section('content')
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="pull-right">
@@ -15,6 +9,7 @@
             Clients List
         </div>
         <div class="panel-body">
+            <div class="table-responsive">
             <table class="table table-hover table-bordered">
                 <thead>
                     <tr>
@@ -45,9 +40,8 @@
                 @endforeach
                 </tbody>
             </table>
+            </div>
             {!! $clients->render() !!}
         </div>
     </div>
-</div>
-</body>
-</html>
+@endsection

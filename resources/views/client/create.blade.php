@@ -1,31 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add new Client</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+@extends('layout.master')
+@section('css')
     <style type="text/css">
         .form-group.required .control-label:after {
             content:" *";
             color:red;
         }
     </style>
-    <script>
-        $(document).ready(function(){
-            $('.datepicker').datepicker({
-                format: "yyyy-mm-dd",
-                endDate: "0d",
-                autoclose: true
-            });
+@endsection
 
-        });
-    </script>
-</head>
-<body>
-<div class="container">
+@section('content')
     <div class="panel panel-default">
         <div class="panel-heading">
             Add new Client
@@ -48,13 +31,13 @@
                 <div class="col-sm-9">
                     <div>
                         <label class="radio-inline">
-                            <input type="radio" name="gender" value="male"> Male
+                            <input type="radio" name="gender" value="male"> &nbsp;Male
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="gender" value="female"> Female
+                            <input type="radio" name="gender" value="female"> &nbsp;Female
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="gender"  value="other"> Other
+                            <input type="radio" name="gender"  value="other"> &nbsp;Other
                         </label>
                     </div>
 
@@ -105,9 +88,8 @@
             <div class="form-group required {{ ($errors->has('date_of_birth'))?"has-error":'' }}">
                 <label for="dob" class="col-sm-3 control-label">Date of Birth</label>
                 <div class="col-sm-9">
-                    <input name="date_of_birth" class="form-control datepicker" id="dob">
+                    <input name="date_of_birth" class="form-control datepicker" id="dob"  data-date-end-date="-10y">
                     {!! $errors->first('date_of_birth', '<span class="label label-danger" >:message</span >') !!}
-
                 </div>
             </div>
 
@@ -124,13 +106,13 @@
                 <div class="col-sm-9">
                     <div>
                         <label class="radio-inline">
-                            <input type="radio" name="preferred_contact_mode" value="email"> Email
+                            <input type="radio" name="preferred_contact_mode" value="email"> &nbsp;Email
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="preferred_contact_mode" value="phone"> Phone
+                            <input type="radio" name="preferred_contact_mode" value="phone"> &nbsp;Phone
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="preferred_contact_mode"  value="none"> None
+                            <input type="radio" name="preferred_contact_mode"  value="none"> &nbsp;None
                         </label>
                     </div>
 
@@ -150,6 +132,4 @@
         </div>
         </form>
     </div>
-</div>
-</body>
-</html>
+@endsection
