@@ -21,11 +21,11 @@ class ClientController extends Controller
      */
     public function index(Request $request)
     {
-        $limit   = 2;
-        $page    = $request->query('page', 1);
-        $offset  = ( $page - 1 ) * $limit;
+        $limit = 2;
+        $page = $request->query('page', 1);
+        $offset = ($page - 1) * $limit;
         $clients = Reader::createFromPath(storage_path('app/client.csv'));
-        $total   = $clients->each(function () {
+        $total = $clients->each(function () {
             return true;
         });
         $clients = (new LengthAwarePaginator($clients->setOffset($offset)->setLimit($limit)->fetchAll(), $total, $limit))->setPath('client');
@@ -40,7 +40,6 @@ class ClientController extends Controller
      */
     public function create()
     {
-
         return view('client.create');
     }
 
@@ -53,9 +52,8 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-
         $file = storage_path('app/client.csv');
-        if ( ! File::exists($file)) {
+        if (!File::exists($file)) {
             File::put($file, '');
         }
         $writer = Writer::createFromPath(new SplFileObject($file), 'a');
