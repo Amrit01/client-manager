@@ -7,6 +7,7 @@ use File;
 use Illuminate\Pagination\LengthAwarePaginator;
 use League\Csv\Reader;
 use League\Csv\Writer;
+use SplFileObject;
 
 class CsvStore implements Store
 {
