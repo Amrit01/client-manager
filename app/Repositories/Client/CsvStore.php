@@ -11,6 +11,7 @@ use SplFileObject;
 
 class CsvStore implements Store
 {
+    private $allowedFields = ['name', 'gender', 'email', 'phone', 'address', 'nationality', 'date_of_birth', 'qualification', 'preferred_contact_mode'];
     /**
      * Get paginated client list.
      *
@@ -44,7 +45,7 @@ class CsvStore implements Store
         $file = $this->checkCsvFile();
         $writer = Writer::createFromPath(new SplFileObject($file), 'a');
 
-        return $writer->insertOne($request->except('_token'));
+        return $writer->insertOne($request->only($this->allowedFields));
     }
 
     /**
