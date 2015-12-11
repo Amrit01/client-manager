@@ -15,7 +15,6 @@ class CsvStore implements Store
      * Get paginated client list.
      *
      * @param $perPage
-     *
      * @param $request
      *
      * @return mixed
@@ -42,7 +41,7 @@ class CsvStore implements Store
     public function store($request)
     {
         $file = storage_path('app/client.csv');
-        if (! File::exists($file)) {
+        if (!File::exists($file)) {
             File::put($file, '');
         }
         $writer = Writer::createFromPath(new SplFileObject($file), 'a');
