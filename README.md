@@ -2,6 +2,13 @@
 [![Build Status](https://travis-ci.org/Amrit01/client-manager.svg?branch=master)](https://travis-ci.org/Amrit01/client-manager)
 [![StyleCI](https://styleci.io/repos/47721899/shield)](https://styleci.io/repos/47721899)
 
+## TOOD
+1. Implement phone number validator. Thinking of implement [Laravel Phone](https://github.com/Propaganistas/Laravel-Phone)
+2. Better testing.
+3. Config for Client options like min age of client,page page result etc.
+4. Thinking
+
+
 ## Installation
 [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+, a database server, and [Composer](https://getcomposer.org) are required.
 
@@ -15,7 +22,6 @@
   * For development, you can simply run `php artisan serve`
 
 ## Developer
-
 ### Implement your own Store
 Right now client information is stored in csv file in `storage/app/client.csv`. If your are thinking of implementing your own store, you can do it very easily.
 Lets suppose you want to save it in a plain text file or in mysql database or any other store.
