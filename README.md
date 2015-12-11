@@ -8,13 +8,15 @@
 1. There are 2 ways of grabbing the code:
   * Use GitHub: simply download the zip on the right of the readme
   * Use Git: `git clone git@github.com:Amrit01/client-manager.git`
-2. From a command line open in the folder, run `composer install --no-dev -o` and then `npm install` and `bower install`.
+2. From a command line open in the folder, run `composer install --no-dev -o`.
 3. Config Application by simply copying .env.example to .env .
-4. Run `gulp --production` to setup the application.
-6. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
+4. Run `php artisan key:generate` to set the application key.
+6. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) or [Nginx Server Blocks](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
 
 ## Developer
+
+### Implement your own Store
 Right now client information is stored in csv file in `storage/app/client.csv`. If your are thinking of implementing your own store, you can do it very easily.
 Lets suppose you want to save it in a plain text file or in mysql database or any other store.
 
@@ -51,3 +53,10 @@ Lets suppose you want to save it in a plain text file or in mysql database or an
 ```
 2. Open file `app/Providers/AppServiceProvider` and look for function `registerClientStore` then replace `App\Repositories\Client\CsvStore` with your own implemented class.
 3. Happy Coding.
+
+### You can design it better
+This project makes use of Bower and Laravel Elixir. Before triggering Elixir, you must first ensure that Node.js (included in homestead) is installed on your machine.
+
+1. First run `npm install` to install node dependencies then run `bower install`( Retrieve frontend dependencies).
+2. I think it will be better your look at the [Laravel Elixir](http://laravel.com/docs/5.1/elixir) documentation once if you don't know what it is.
+3. Happy Coding :) :): :)
