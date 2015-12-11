@@ -21,7 +21,7 @@
             <div class="form-group required {{ ($errors->has('name'))?"has-error":'' }}">
                 <label for="name" class="col-sm-3 control-label">Name</label>
                 <div class="col-sm-9">
-                    <input name="name" class="form-control" id="name" placeholder="Enter Client Name">
+                    <input name="name" class="form-control" id="name" placeholder="Enter Client Name" required>
                     {!! $errors->first('name', '<span class="label label-danger" >:message</span >') !!}
 
                 </div>
@@ -32,13 +32,13 @@
                 <div class="col-sm-9">
                     <div>
                         <label class="radio-inline">
-                            <input type="radio" name="gender" value="male"> &nbsp;Male
+                            <input type="radio" name="gender" value="male" required> &nbsp;Male
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="gender" value="female"> &nbsp;Female
+                            <input type="radio" name="gender" value="female"required > &nbsp;Female
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="gender"  value="other"> &nbsp;Other
+                            <input type="radio" name="gender"  value="other" required> &nbsp;Other
                         </label>
                     </div>
 
@@ -50,7 +50,7 @@
             <div class="form-group required {{ ($errors->has('email'))?"has-error":'' }}">
                 <label for="email" class="col-sm-3 control-label">Email</label>
                 <div class="col-sm-9">
-                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter Client Email">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter Client Email" required>
                     {!! $errors->first('email', '<span class="label label-danger" >:message</span >') !!}
 
                 </div>
@@ -59,7 +59,7 @@
             <div class="form-group required {{ ($errors->has('phone'))?"has-error":'' }}">
                 <label for="phone" class="col-sm-3 control-label">Phone</label>
                 <div class="col-sm-9">
-                    <input name="phone" class="form-control" id="phone">
+                    <input name="phone" class="form-control" id="phone" required>
                     {!! $errors->first('phone', '<span class="label label-danger" >:message</span >') !!}
 
                 </div>
@@ -68,14 +68,14 @@
             <div class="form-group required {{ ($errors->has('address'))?"has-error":'' }}">
                 <label for="address" class="col-sm-3 control-label">Address</label>
                 <div class="col-sm-9">
-                    <input name="address" class="form-control" id="address" placeholder="Enter Client Address">
+                    <input name="address" class="form-control" id="address" placeholder="Enter Client Address" required>
                 </div>
             </div>
 
             <div class="form-group required {{ ($errors->has('email'))?"has-error":'' }}">
                 <label for="nationality" class="col-sm-3 control-label">Nationality</label>
                 <div class="col-sm-9">
-                    <select name="nationality" id="nationality" class="form-control">
+                    <select name="nationality" id="nationality" class="form-control" required>
                         <option value="">Choose Nationality</option>
                         @foreach(config('nationalities') as $nationality)
                             <option value="{{ $nationality }}">{{ $nationality }}</option>
@@ -89,7 +89,7 @@
             <div class="form-group required {{ ($errors->has('date_of_birth'))?"has-error":'' }}">
                 <label for="dob" class="col-sm-3 control-label">Date of Birth</label>
                 <div class="col-sm-9">
-                    <input name="date_of_birth" class="form-control datepicker" id="dob"  data-date-end-date="-10y">
+                    <input name="date_of_birth" class="form-control datepicker" id="dob"  data-date-end-date="-10y" required>
                     {!! $errors->first('date_of_birth', '<span class="label label-danger" >:message</span >') !!}
                 </div>
             </div>
@@ -97,7 +97,7 @@
             <div class="form-group required {{ ($errors->has('qualification'))?"has-error":'' }}">
                 <label for="qualification" class="col-sm-3 control-label">Qualification</label>
                 <div class="col-sm-9">
-                    <input name="qualification" class="form-control" id="qualification">
+                    <input name="qualification" class="form-control" id="qualification" required>
                     {!! $errors->first('qualification', '<span class="label label-danger" >:message</span >') !!}
                 </div>
             </div>
@@ -107,13 +107,13 @@
                 <div class="col-sm-9">
                     <div>
                         <label class="radio-inline">
-                            <input type="radio" name="preferred_contact_mode" value="email"> &nbsp;Email
+                            <input type="radio" name="preferred_contact_mode" value="email" required> &nbsp;Email
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="preferred_contact_mode" value="phone"> &nbsp;Phone
+                            <input type="radio" name="preferred_contact_mode" value="phone" required> &nbsp;Phone
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="preferred_contact_mode"  value="none"> &nbsp;None
+                            <input type="radio" name="preferred_contact_mode"  value="none" required> &nbsp;None
                         </label>
                     </div>
 
