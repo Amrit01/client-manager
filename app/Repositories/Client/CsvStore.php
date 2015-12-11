@@ -12,6 +12,7 @@ use SplFileObject;
 class CsvStore implements Store
 {
     private $allowedFields = ['name', 'gender', 'email', 'phone', 'address', 'nationality', 'date_of_birth', 'qualification', 'preferred_contact_mode'];
+
     /**
      * Get paginated client list.
      *
