@@ -56,8 +56,9 @@ class ClientController extends Controller
     {
         try {
             $this->clientRepository->store($request);
+            session()->flash('success', 'Client information saved successfully.');
         } catch (\Exception $e) {
-            //@TODO flash error message
+            $this->handleFlashMessage($e);
         }
 
         return redirect()->action('ClientController@index');
