@@ -7,8 +7,8 @@ interface Store
     /**
      * Get paginated client list.
      *
-     * @param $perPage
-     * @param $request
+     * @param $perPage Number of result per page
+     * @param $request illuminate request object
      *
      * @return mixed
      */
@@ -17,7 +17,7 @@ interface Store
     /**
      * Store Requested data.
      *
-     * @param $request
+     * @param $request illuminate request object
      *
      * @return mixed
      */

@@ -9,9 +9,44 @@
   * Use GitHub: simply download the zip on the right of the readme
   * Use Git: `git clone git@github.com:Amrit01/client-manager.git`
 2. From a command line open in the folder, run `composer install --no-dev -o` and then `npm install` and `bower install`.
-3. Enter your database details by simply copying .env.example to .env .
+3. Config Application by simply copying .env.example to .env .
 4. Run `gulp --production` to setup the application.
 6. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
 
+## Developer
+Right now client information is stored in csv file in `storage/app/client.csv`. If your are thinking of implementing your own store, you can do it very easily.
+Lets suppose you want to save it in a plain text file or in mysql database or any other store.
+1. Create your own store class like the on below. Make sure you implement `App\Repositories\Client\Contracts\Store` Contract.
+```php
+    use App\Repositories\Client\Contracts\Store;
+    class FileStore implements Store
+    {
+        /**
+         * Get paginated client list.
+         *
+         * @param $perPage
+         * @param $request
+         *
+         * @return mixed
+         */
+        public function paginated($perPage, $request){
+            //your code here to retrive data from your storage.
+        }
 
+        /**
+         * Store Requested data.
+         *
+         * @param $request
+         *
+         * @return mixed
+         */
+        public function store($request)
+        {
+            // your code here to store requested form data to your storage.
+        }
+
+    }
+```
+2. Open file `app/Providers/AppServiceProvider` and look for function `registerClientStore` then replace `App\Repositories\Client\CsvStore` with your own implemented class.
+3. Happy Coding.
