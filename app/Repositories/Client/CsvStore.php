@@ -55,7 +55,7 @@ class CsvStore implements Store
     public function checkCsvFile()
     {
         $file = storage_path('app/client.csv');
-        if ( !File::exists($file)) {
+        if (! File::exists($file)) {
             File::put($file, '');
 
             return $file;
