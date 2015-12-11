@@ -26,6 +26,9 @@ class AppServiceProvider extends ServiceProvider
         $this->registerClientStore();
     }
 
+    /**
+     * Client Data Store Binding.
+     */
     public function registerClientStore()
     {
         $this->app->bind('App\Repositories\Client\Contracts\Store', 'App\Repositories\Client\CsvStore');
