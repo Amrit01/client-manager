@@ -14,7 +14,7 @@
         <div class="panel-heading">
             Add new Client
         </div>
-        <form method="POST" action="{{ action('ClientController@store') }}" class="form-horizontal">
+        <form method="POST" action="{{ action('ClientController@store') }}" class="form-horizontal" data-toggle="validator">
             {!! csrf_field() !!}
         <div class="panel-body">
 
@@ -59,7 +59,7 @@
             <div class="form-group required {{ ($errors->has('phone'))?"has-error":'' }}">
                 <label for="phone" class="col-sm-3 control-label">Phone</label>
                 <div class="col-sm-9">
-                    <input name="phone" class="form-control" id="phone" required>
+                    <input name="phone" class="form-control" id="phone" placeholder="Enter Client Phone Number" required>
                     {!! $errors->first('phone', '<span class="label label-danger" >:message</span >') !!}
 
                 </div>
@@ -89,7 +89,7 @@
             <div class="form-group required {{ ($errors->has('date_of_birth'))?"has-error":'' }}">
                 <label for="dob" class="col-sm-3 control-label">Date of Birth</label>
                 <div class="col-sm-9">
-                    <input name="date_of_birth" class="form-control datepicker" id="dob"  data-date-end-date="-10y" required>
+                    <input name="date_of_birth" class="form-control datepicker" id="dob" placeholder="Choose Client Date Of Birth" data-date-end-date="-10y" required>
                     {!! $errors->first('date_of_birth', '<span class="label label-danger" >:message</span >') !!}
                 </div>
             </div>
@@ -97,7 +97,7 @@
             <div class="form-group required {{ ($errors->has('qualification'))?"has-error":'' }}">
                 <label for="qualification" class="col-sm-3 control-label">Qualification</label>
                 <div class="col-sm-9">
-                    <input name="qualification" class="form-control" id="qualification" required>
+                    <input name="qualification" class="form-control" id="qualification" placeholder="Enter Client Qualification" required>
                     {!! $errors->first('qualification', '<span class="label label-danger" >:message</span >') !!}
                 </div>
             </div>

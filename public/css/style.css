@@ -8300,6 +8300,10 @@ button.close {
   }
 }
 
+.ion {
+  font-size: 17px;
+}
+
 .panel {
   box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
   border-radius: 0;

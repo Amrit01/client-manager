@@ -7,7 +7,7 @@
             <div class="pull-right">
                 <a href="{{ action('ClientController@create') }}" class="btn btn-primary">Add New Client</a>
             </div>
-            Clients List
+            <i class="ion ion-ios-people"></i>&nbsp;Clients List
         </div>
         <div class="panel-body">
             <div class="table-responsive">
