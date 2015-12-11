@@ -9,6 +9,7 @@
 @endsection
 
 @section('content')
+<div class="row">
     <div class="panel panel-default">
         <div class="panel-heading">
             Add new Client
@@ -132,4 +133,5 @@
         </div>
         </form>
     </div>
+</div>
 @endsection
