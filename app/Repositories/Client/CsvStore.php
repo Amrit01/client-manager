@@ -31,7 +31,7 @@ class CsvStore implements Store
             return true;
         });
 
-        return (new LengthAwarePaginator($clients->setOffset($offset)->setLimit($perPage)->fetchAll(), $total, $perPage))->setPath('client');
+        return (new LengthAwarePaginator($clients->setOffset($offset)->setLimit($perPage)->fetchAssoc($this->allowedFields), $total, $perPage))->setPath('client');
     }
 
     /**

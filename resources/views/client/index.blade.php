@@ -28,15 +28,15 @@
                 <tbody>
                 @forelse($clients as $client)
                     <tr>
-                        <td>{{ e(ucwords($client[0])) }}</td>
-                        <td>{{ ucwords($client[1]) }}</td>
-                        <td><a href="mailto:{{$client[2]}}">{{ $client[2] }}</a></td>
-                        <td>{{ e($client[3]) }}</td>
-                        <td>{{ e($client[4]) }}</td>
-                        <td>{{ $client[5] }}</td>
-                        <td>{{ $client[6] }}</td>
-                        <td>{{ e($client[7]) }}</td>
-                        <td>{{ ucwords($client[8]) }}</td>
+                        <td>{{ e(ucwords($client['name'])) }}</td>
+                        <td>{{ ucwords($client['gender']) }}</td>
+                        <td><a href="mailto:{{$client['email']}}">{{ $client['email'] }}</a></td>
+                        <td>{{ e($client['phone']) }}</td>
+                        <td>{{ e($client['address']) }}</td>
+                        <td>{{ $client['nationality'] }}</td>
+                        <td>{{ $client['date_of_birth'] }}</td>
+                        <td>{{ e($client['qualification']) }}</td>
+                        <td>{{ ucwords($client['preferred_contact_mode']) }}</td>
                     </tr>
                 @empty
                     <tr>
