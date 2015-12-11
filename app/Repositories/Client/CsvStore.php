@@ -21,6 +21,7 @@ class CsvStore implements Store
      */
     public function paginated($perPage, $request)
     {
+        $this->checkCsvFile();
         $page = $request->query('page', 1);
         $offset = ($page - 1) * $perPage;
         $clients = Reader::createFromPath(storage_path('app/client.csv'));
@@ -40,12 +41,26 @@ class CsvStore implements Store
      */
     public function store($request)
     {
-        $file = storage_path('app/client.csv');
-        if (!File::exists($file)) {
-            File::put($file, '');
-        }
+        $file = $this->checkCsvFile();
         $writer = Writer::createFromPath(new SplFileObject($file), 'a');
 
         return $writer->insertOne($request->except('_token'));
+    }
+
+    /**
+     * Checking if csv file exist if not create it.
+     *
+     * @return string
+     */
+    public function checkCsvFile()
+    {
+        $file = storage_path('app/client.csv');
+        if ( ! File::exists($file)) {
+            File::put($file, '');
+
+            return $file;
+        }
+
+        return $file;
     }
 }
