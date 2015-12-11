@@ -4,7 +4,7 @@ Client Manager is built using [Laravel 5.1](http://laravel.com). It manage your 
 [![Build Status](https://travis-ci.org/Amrit01/client-manager.svg?branch=master)](https://travis-ci.org/Amrit01/client-manager)
 [![StyleCI](https://styleci.io/repos/47721899/shield)](https://styleci.io/repos/47721899)
 
-## TOOD
+## TODO
 1. Implement phone number validator. Thinking of implement [Laravel Phone](https://github.com/Propaganistas/Laravel-Phone)
 2. Better testing.
 3. Config for Client options like min age of client,page page result etc.
