@@ -32,7 +32,6 @@ class ClientTest extends TestCase
         $this->assertSessionHas('success');
     }
 
-
     public function testCreateClientWithInValidData()
     {
         $this->withoutMiddleware();
