@@ -17,6 +17,7 @@
 ## Developer
 Right now client information is stored in csv file in `storage/app/client.csv`. If your are thinking of implementing your own store, you can do it very easily.
 Lets suppose you want to save it in a plain text file or in mysql database or any other store.
+
 1. Create your own store class like the on below. Make sure you implement `App\Repositories\Client\Contracts\Store` Contract.
 ```php
     use App\Repositories\Client\Contracts\Store;
