@@ -1,6 +1,4 @@
 # Client Manager
-============
-
 Client Manager is built using [Laravel 5.1](http://laravel.com). It manage your client information and make your life easier. :D
 
 [![Build Status](https://travis-ci.org/Amrit01/client-manager.svg?branch=master)](https://travis-ci.org/Amrit01/client-manager)
