@@ -8300,6 +8300,28 @@ button.close {
   }
 }
 
+.panel {
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  margin: 0 0 32px 0;
+}
+
+.panel .panel-heading {
+  padding: 0px 16px 0px 16px;
+  line-height: 45px;
+  font-weight: bold;
+}
+
+.panel .panel-footer {
+  padding: 16px;
+  border-radius: 0 0 2px 2px;
+}
+
+.datepicker {
+  border-radius: 0 !important;
+  padding: 10px !important;
+}
+
 .radio-inline,
 .checkbox-inline {
   padding-left: 0;

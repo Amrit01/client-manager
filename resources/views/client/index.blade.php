@@ -5,7 +5,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="pull-right">
-                <a href="{{ action('ClientController@create') }}" class="bth btn-sm btn-primary">Add New Client</a>
+                <a href="{{ action('ClientController@create') }}" class="btn btn-primary">Add New Client</a>
             </div>
             Clients List
         </div>
@@ -26,19 +26,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach($clients as $client)
+                @forelse($clients as $client)
                     <tr>
-                        <td>{{ $client[0] }}</td>
-                        <td>{{ $client[1] }}</td>
-                        <td>{{ $client[2] }}</td>
-                        <td>{{ $client[3] }}</td>
-                        <td>{{ $client[4] }}</td>
+                        <td>{{ e(ucwords($client[0])) }}</td>
+                        <td>{{ ucwords($client[1]) }}</td>
+                        <td><a href="mailto:{{$client[2]}}">{{ $client[2] }}</a></td>
+                        <td>{{ e($client[3]) }}</td>
+                        <td>{{ e($client[4]) }}</td>
                         <td>{{ $client[5] }}</td>
                         <td>{{ $client[6] }}</td>
-                        <td>{{ $client[7] }}</td>
-                        <td>{{ $client[8] }}</td>
+                        <td>{{ e($client[7]) }}</td>
+                        <td>{{ ucwords($client[8]) }}</td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td class="alert alert-warning" role="alert" colspan="9">No record to show.</td>
+                    </tr>
+                @endforelse
                 </tbody>
             </table>
             </div>
