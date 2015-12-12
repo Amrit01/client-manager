@@ -3,7 +3,8 @@ Client Manager is built using [Laravel 5.1](http://laravel.com). It manage your 
 
 [![Build Status](https://travis-ci.org/Amrit01/client-manager.svg?branch=master)](https://travis-ci.org/Amrit01/client-manager)
 [![StyleCI](https://styleci.io/repos/47721899/shield)](https://styleci.io/repos/47721899)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Amrit01/client-manager/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Amrit01/client-manager/?branch=master)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/Amrit01/client-manager.svg?style=flat-square)](https://scrutinizer-ci.com/g/Amrit01/client-manager/?branch=master)
+
 ## TODO
 1. Implement phone number validator. Thinking of implement [Laravel Phone](https://github.com/Propaganistas/Laravel-Phone)
 2. Better testing.
