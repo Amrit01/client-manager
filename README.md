@@ -11,7 +11,6 @@ Client Manager is built using [Laravel 5.1](http://laravel.com). It manage your 
 3. Config for Client options like min age of client,page page result etc.
 4. Thinking
 
-
 ## Installation
 [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+, a database server, and [Composer](https://getcomposer.org) are required.
 
@@ -68,4 +67,4 @@ This project makes use of Bower and Laravel Elixir. Before triggering Elixir, yo
 
 1. First run `npm install` to install node dependencies then run `bower install`( Retrieve frontend dependencies).
 2. I think it will be better your look at the [Laravel Elixir](http://laravel.com/docs/5.1/elixir) documentation once if you don't know what it is.
-3. Happy Coding :) :): :)
+3. Happy Coding :) :) :)
