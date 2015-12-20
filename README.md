@@ -59,6 +59,7 @@ Lets suppose you want to save it in a plain text file or in mysql database or an
 
     }
 ```
+
 2. Open file `app/Providers/AppServiceProvider` and look for function `registerClientStore` then replace `App\Repositories\Client\CsvStore` with your own implemented class.
 3. Happy Coding.
 
