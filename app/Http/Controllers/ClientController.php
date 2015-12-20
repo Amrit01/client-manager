@@ -19,7 +19,7 @@ class ClientController extends Controller
     private $logger;
 
     /**
-     * @param Store $clientRepository
+     * @param Store           $clientRepository
      * @param LoggerInterface $logger
      */
     public function __construct(Store $clientRepository, LoggerInterface $logger)
